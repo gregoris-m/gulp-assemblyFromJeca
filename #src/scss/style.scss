@@ -1,0 +1,41 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"),
+    url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@import "fonts";
+
+@mixin Lato-Bold {
+  font: {
+    family: Lato-Bold;
+    size: 40px;
+  }
+}
+
+.main {
+  display: flex;
+  color: red;
+  font-size: 30px;
+  @include Lato-Bold;
+}
+
+
+@media (max-width: 768px) {
+  span {
+    font-size: 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  div {
+    font-size: 30px;
+    font-size: 20px;
+  }
+}
